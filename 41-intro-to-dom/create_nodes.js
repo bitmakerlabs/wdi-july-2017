@@ -1,0 +1,1 @@
+// Vanilla JS DOM Manipulation
