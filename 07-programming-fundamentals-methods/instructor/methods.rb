@@ -30,6 +30,8 @@ def give_bonus_life(current_life_level)
   else
     new_life_level = current_life_level * 1.1
   end
+
+  new_life_level
 end
 
 player_one_life = give_bonus_life(30)
