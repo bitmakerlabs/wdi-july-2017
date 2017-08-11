@@ -18,20 +18,59 @@
 #puts total
 
 # Problem 2: Find frequency of the letter "s" in a string
-word = "lkasjfs"
+# version 1
+# word =  gets.chomp
+# total = 0
+# word.each_char do |current_character|
+#   if current_character == "s"
+#     total = total + 1
+#   end
+# end
+# puts total
 
-# iterate through characters
-total = 0
-word.each_char do |current_character|
-  if current_character == "s"
-    total = total + 1
-  end
-end
-puts "There are #{total} s in #{word}"
+# version 2
+# def letter_frequency(word, letter)
+#   total = 0
+#   word.each_char do |current_character|
+#     if current_character == letter
+#       total = total + 1
+#     end # if
+#   end # each_char
+#
+#   return total
+#
+# end # def
+#
+# user_specific_word = gets.chomp
+# result1 = letter_frequency(user_specific_word, "s")
+# puts result1
+
+# letter_frequency("dog", "o")
+# word = "another word"
+# letter_frequency(word, "o")
+
+# result2 = letter_frequency(user_specific_word, "a")
+# puts result2
+
+
 
 # Problem 3: Find frequency of the letter "a" in a string
 
 # Problem 4: Find the number of violations in each violation category
+# {money_owed: 50.0, violation_category: "Garbage and Refuse", date: "2012-11-01 00:00:00", inspection_id: "232528"},
+# {money_owed: 10.0, violation_category: "Unsanitary Conditions", date: "2012-12-26 00:00:00", inspection_id: "230544"},
+# {money_owed: 55.0, violation_category: "Garbage and Refuse", date: "2012-12-26 00:00:00", inspection_id: "230543"},
+# {money_owed: 13.0, violation_category: "Garbage and Refuse", date: "2012-12-20 00:00:00", inspection_id: "230525"},
+# {money_owed: 44.0, violation_category: "Garbage and Refuse", date: "2012-12-20 00:00:00", inspection_id: "230524"},
+# {money_owed: 70.0, violation_category: "Animals and Pests", date: "2012-12-19 00:00:00", inspection_id: "230404"},
+# {money_owed: 22.0, violation_category: "Animals and Pests", date: "2012-12-19 00:00:00", inspection_id: "230403"},
+# {money_owed: 56.0, violation_category: "Garbage and Refuse", date: "2012-12-19 00:00:00", inspection_id: "230402"},
+
+
+
+
+
+
 
 violations = [ {money_owed: 50.0, violation_category: "Garbage and Refuse", date: "2012-11-01 00:00:00", inspection_id: "232528"},
 {money_owed: 10.0, violation_category: "Unsanitary Conditions", date: "2012-12-26 00:00:00", inspection_id: "230544"},
@@ -185,6 +224,38 @@ violations = [ {money_owed: 50.0, violation_category: "Garbage and Refuse", date
 {money_owed: 70.0, violation_category: "Vegetation", date: "2012-09-19 00:00:00", inspection_id: "223815"},
 {money_owed: 36.0, violation_category: "Unsanitary Conditions", date: "2012-09-19 00:00:00", inspection_id: "223814"},
 {money_owed: 44.0, violation_category: "Garbage and Refuse", date: "2012-09-19 00:00:00", inspection_id: "223813"} ]
+
+# garbage and refuse:
+# unsanitary conditions:
+# animals and pests:
+
+# iterate through violations array
+total_violation_types = {}
+
+# go through each individual hash
+violations.each do |current_violation_hash|
+
+  name = current_violation_hash[:violation_category] # this gives us the category
+
+  if total_violation_types[name] == nil # we've seen it before
+
+    # add new key, value pair to the hash called total_violation_types
+    # the key is whatever string is in the variable name
+    # the value is 1
+    total_violation_types[name] = 1
+
+  else
+    current_total = total_violation_types[name]
+    new_total = 1 + current_total
+    total_violation_types[name] = new_total
+  end
+
+end
+puts total_violation_types
+
+
+
+
 
 # Problem 5: Find the total money owed for each violation category
 
