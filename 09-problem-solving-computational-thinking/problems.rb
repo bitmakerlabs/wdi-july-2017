@@ -1,6 +1,33 @@
 # Problem 1: Get the total sum of a list of numbers
+#1 = 0 + 1
+#3 = 1 + 2
+#8 = 3 +  5
+#18 = 8 + 10
+#19 = 18 + 1
+#20 = 19 + 1
+
+
+# _ + _ = _
+#numbers = [1,2,5,10,1,1]
+
+
+#total = 0
+#numbers.each do |current_num|
+  #total = total + current_num
+#end
+#puts total
 
 # Problem 2: Find frequency of the letter "s" in a string
+word = "lkasjfs"
+
+# iterate through characters
+total = 0
+word.each_char do |current_character|
+  if current_character == "s"
+    total = total + 1
+  end
+end
+puts "There are #{total} s in #{word}"
 
 # Problem 3: Find frequency of the letter "a" in a string
 
