@@ -1,6 +1,4 @@
 class Film
-  attr_accessor :id, :title, :country, :genre, :rating, :description
-
   @@library = []
   @@id = 1;
 
@@ -13,6 +11,50 @@ class Film
     @id = @@id
 
     @@id += 1
+  end
+
+  def id
+    @id
+  end
+
+  def title
+    @title
+  end
+
+  def title=(new_title)
+    @title = new_title
+  end
+
+  def country
+    @country
+  end
+
+  def country=(new_country)
+    @country = new_country
+  end
+
+  def genre
+    @genre
+  end
+
+  def genre=(new_genre)
+    @genre = new_genre
+  end
+
+  def rating
+    @rating
+  end
+
+  def rating=(new_rating)
+    @rating = new_rating
+  end
+
+  def description
+    @description
+  end
+
+  def description=(new_description)
+    @description = new_description
   end
 
   def self.create(options)
