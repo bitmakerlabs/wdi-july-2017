@@ -164,6 +164,8 @@ violation_stats = {}
 
 violations.each do |violation_hash|
   current_violation_category = violation_hash[:violation_category]
+
+
   if violation_stats.include?(current_violation_category) # category is in hash already
     # add 1 to the count
     violation_stats[current_violation_category][:count] += 1
@@ -180,19 +182,35 @@ violations.each do |current_violation|
   category_stats = violation_stats[current_category_name]
 
   if category_stats[:total_owed] == nil
-    category_stats[:total_owed] = {total_owed: current_violation[:money_owed]}
+    category_stats[:total_owed] = current_violation[:money_owed]
   else
     category_stats[:total_owed] += current_violation[:money_owed]
   end
 end
+# july 25
+# dec 28
+list_of_dates = violations.map do |violation|
+  violation[:date]
+end
+sorted_list_of_dates = list_of_dates.sort
+earliest_date = sorted_list_of_dates[0]
 
 violations.each do |current_violation|
   current_category_name = current_violation[:violation_category]
   current_date = current_violation[:date]
   category_stats = violation_stats[current_category_name]
 
+  # this should only happen the first time that we see the category
+  if category_stats[:earliest_violation] == nil
+    category_stats[:earliest_violation] = "#{Time.now}"
+  end
+
   if category_stats[:earliest_violation] > current_date
     category_stats[:earliest_violation] = current_date
+  end
+
+  if category_stats[:latest_violation] == nil
+    category_stats[:latest_violation] =  earliest_date
   end
 
   if category_stats[:latest_violation] < current_date
@@ -207,4 +225,5 @@ violation_stats.each do |category, stats|
   latest = stats[:latest_violation]
   puts "There are #{count} violations in the category #{category} for a total of #{fines} in fines."
   puts "The earliest violation is #{earliest} and the latest violation is #{latest}"
+  puts "***"
 end
