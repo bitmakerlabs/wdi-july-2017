@@ -1,0 +1,18 @@
+As a user, I should be able to see a list of contacts.  MUST HAVE
+As a user, I should be able to add a contact.  MUST HAVE
+As a user, I should be able to delete a contact. NICE TO HAVE
+As a user, I should be able to edit a contact. NICE TO HAVE
+As a user, I should be able to block a contact.
+As a user, I should be able to prioritize the list of contacts.
+As a user, I should be able to view the activity history of a contact.
+As a user, I should be able to search for a contact.
+As a user, I should be able to sort the list of contacts by name.
+As a user, I should be able to add a category to a contact.
+As a user, I should be able to add a note to a contact.
+As a user, I should be able to call a contact.
+As a user, I should be able to add more than one number to a contact.
+As a user, I should be able to find a contact. (MUST HAVE)
+As a user, I should be able to add a picture to a contact.
+As a user, I should be able to add a ringtone to a contact.
+As a user, I should be able to send a birthday greeting to a contact.
+As a user, I should be able to add an email to a contact.
