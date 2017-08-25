@@ -1,12 +1,7 @@
-<h2>Film Library</h2>
-<ul>
-  <% Film.all.each do |film| %>
-    <li><%= film.title %></li>
-  <% end %>
-</ul>
 
 <h2>New Film</h2>
 <form class="new-film" action="/films" method="post">
+  <!-- <input type="hidden" name="_method" value="delete"> -->
   <div>
     <!-- input type: text -->
     <label for="film-title">
@@ -32,7 +27,7 @@
   <div>
     <!-- textarea -->
     <label for="film-description">Description:
-      <textarea id="film-description" name="description"></textarea>
+      <textarea id="film-description" name="synopsis"></textarea>
     </label>
   </div>
 
@@ -103,3 +98,10 @@
   </div>
 
 </form>
+
+<h2>Film Library</h2>
+<ul>
+  <% Film.all.each do |film| %>
+    <li><%= film.title %></li>
+  <% end %>
+</ul>

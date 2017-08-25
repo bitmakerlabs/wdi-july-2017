@@ -11,7 +11,14 @@ get '/films' do
 end
 
 post '/films' do
-  "POST request: #{params}"
+  Film.create({title: params[:title] , description: params[:synopsis],
+               available: params[:available], country: params[:country], rating: params[:rating]})
+
+  # don't do this
+  # erb :index
+
+  # do this instead
+  redirect to('/')
 end
 
 put '/films' do
