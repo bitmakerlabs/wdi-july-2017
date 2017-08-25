@@ -77,30 +77,10 @@ We'll look at how to build a form, how a form sends its data to the server, best
   </fieldset>
 ```
 ```
-
-  <fieldset>
-    <legend>Genre</legend>
-
     <label>
-      Animated
-      <input type="checkbox" name="genre[]" value="animated">
+      Available?
+      <input type="checkbox" name="available" value="1">
     </label>
-
-    <label>
-      Drama
-      <input type="checkbox" name="genre[]" value="drama">
-    </label>
-
-    <label>
-      Comedy
-      <input type="checkbox" name="genre[]" value="comedy">
-    </label>
-
-    <label>
-      Documentary
-      <input type="checkbox" name="genre[]" value="documentary">
-    </label>
-  </fieldset>
 ```
 
  `<!-- <input type="file" name="name" value=""> -->`
