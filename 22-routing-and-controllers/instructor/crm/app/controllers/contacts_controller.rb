@@ -17,4 +17,7 @@ class ContactsController < ApplicationController
     redirect_to contacts_url
   end
 
+  def edit
+  end
+
 end
