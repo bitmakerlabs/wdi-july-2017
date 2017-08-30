@@ -5,4 +5,10 @@ class ContactsController < ApplicationController
     render :index
   end
 
+  def show
+    @contact = params[:id]
+
+    render :show
+  end
+
 end
