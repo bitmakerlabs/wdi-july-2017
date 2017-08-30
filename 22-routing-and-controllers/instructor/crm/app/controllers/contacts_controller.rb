@@ -10,5 +10,11 @@ class ContactsController < ApplicationController
 
   def new
   end
-  
+
+  def create
+    # Save the contact
+    # If saving is successful,
+    redirect_to contacts_url
+  end
+
 end
