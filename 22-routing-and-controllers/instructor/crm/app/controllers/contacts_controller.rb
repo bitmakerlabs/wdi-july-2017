@@ -20,4 +20,10 @@ class ContactsController < ApplicationController
   def edit
   end
 
+  def update
+    # Update the contact
+    # If saving is successful
+    redirect_to contacts_url
+  end
+
 end
