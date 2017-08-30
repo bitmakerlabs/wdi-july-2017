@@ -26,4 +26,10 @@ class ContactsController < ApplicationController
     redirect_to contacts_url
   end
 
+  def destroy
+    # Delete the contact
+    # if deletion is successful
+    redirect_to contacts_url
+  end
+
 end

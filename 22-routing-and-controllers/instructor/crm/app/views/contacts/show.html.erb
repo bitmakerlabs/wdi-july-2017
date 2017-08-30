@@ -5,5 +5,7 @@
 </p>
 
 <%= link_to 'Edit Contact', edit_contact_path(@contact) %>
-
+|
+<%= link_to 'Delete Contact', contact_path(@contact), method: :delete %>
+|
 <%= link_to 'Contact List', contacts_path %>
