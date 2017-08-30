@@ -1,5 +1,7 @@
 <h1>Contacts Index</h1>
 
+<%= link_to 'New Contact', new_contact_path %>
+
 <ul>
   <% @contacts.each do |contact| %>
     <li>
@@ -7,3 +9,6 @@
     </li>
   <% end %>
 </ul>
+
+<!-- _url  : Use in Controllers -->
+<!-- _path : Use in Views -->
