@@ -1,0 +1,13 @@
+<h1>Weather for <%= @city %></h1>
+
+<p>
+  <%= @city %>
+</p>
+
+<form action="<%= submit_comment_path(@city) %>" method="post">
+  <input type="text" name="message" />
+  <input type="submit" />
+</form>
+
+<%= form_tag(submit_comment_path(@city), method: :post) do |hello| %>
+<% end %>
