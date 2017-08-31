@@ -12,3 +12,11 @@
   <%= city_page_path('toronto') %><br />
   <%= link_to 'Toronto', city_page_path('toronto') %>
 </p>
+
+<p><%= @latest_comment %></p>
+
+<% Comment.all.each do |comment| %>
+  <p>
+    <%= comment.city %>: <%= comment.message %>
+  </p>
+<% end %>

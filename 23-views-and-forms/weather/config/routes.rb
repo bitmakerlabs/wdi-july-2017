@@ -4,4 +4,6 @@ Rails.application.routes.draw do
   get 'weather' => 'conditions#index', as: 'weather_page'
   get 'weather/:city' => 'conditions#city', as: 'city_page'
   post 'weather/:city/submit_comment' => 'conditions#create', as: 'submit_comment'
+
+  resources :comments
 end

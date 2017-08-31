@@ -10,4 +10,13 @@
 </form>
 
 <%= form_tag(submit_comment_path(@city), method: :post) do |hello| %>
+  <%= text_field_tag :message %>
+  <%= submit_tag %>
+<% end %>
+
+<%= form_for @comment do |form_helper| %>
+  <%= form_helper.text_field :message %>
+  <%= form_helper.text_field :city %>
+  <%= form_helper.submit %>
+
 <% end %>

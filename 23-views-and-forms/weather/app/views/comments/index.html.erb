@@ -1,0 +1,8 @@
+
+<h1>All Comments</h1>
+
+<% @comments.each do |comment| %>
+  <p>
+    From <%= comment.city %> - <%= comment.message %>
+  </p>
+<% end %>
