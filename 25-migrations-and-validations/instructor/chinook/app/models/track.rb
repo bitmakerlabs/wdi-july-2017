@@ -3,6 +3,10 @@ class Track < ApplicationRecord
   SHORT = 180000
   LONG  = 360000
 
+  def self.starts_with(char)
+    where('name ILIKE ?', "#{ char }%")
+  end
+
   def self.short
     shorter_than(SHORT)
   end
