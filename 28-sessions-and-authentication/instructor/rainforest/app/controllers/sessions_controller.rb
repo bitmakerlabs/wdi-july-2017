@@ -6,6 +6,10 @@ class SessionsController < ApplicationController
     u = User.find_by(email: params[:session][:email])
 
     if u && u.authenticate(params[:session][:password])
+
+      # Put a wristband on the user
+      session[:user_id] = u.id
+
       redirect_to root_url
     else
       render :new
@@ -15,3 +19,8 @@ class SessionsController < ApplicationController
   def destroy
   end
 end
+
+# These 3 hashes are always available to you in a Rails controller
+# params
+# session
+# flash

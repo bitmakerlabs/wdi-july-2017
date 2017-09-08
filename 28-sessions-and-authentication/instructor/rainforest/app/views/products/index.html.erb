@@ -3,13 +3,7 @@
 
 <h1>Rainforest Homepage</h1>
 
-<%
-def user_is_logged_in
-  false
-end
-%>
-
-<% if user_is_logged_in() %>
+<% if session[:user_id] %>
   <p><%= link_to 'Logout', sessions_path %></p>
 
   <p>You have X credits!</p>
