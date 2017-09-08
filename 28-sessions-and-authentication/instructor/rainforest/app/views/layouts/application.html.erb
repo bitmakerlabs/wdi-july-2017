@@ -9,14 +9,14 @@
   </head>
 
   <body>
-    <% if session[:user_id] %>
+    <% if current_user %>
       <p>
         <%= link_to 'Home', root_path %>
         |
         <%= link_to 'Logout', sessions_path, method: :delete %>
       </p>
 
-      Hello User #<%= session[:user_id] %>, you have X credits!
+      Hello <%= current_user.email %>, you have X credits!
     <% else %>
       <p>
         <%= link_to 'Home', root_path %>
