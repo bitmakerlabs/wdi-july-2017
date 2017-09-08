@@ -9,6 +9,25 @@
   </head>
 
   <body>
+    <% if session[:user_id] %>
+      <p>
+        <%= link_to 'Home', root_path %>
+        |
+        <%= link_to 'Logout', sessions_path, method: :delete %>
+      </p>
+
+      Hello User #<%= session[:user_id] %>, you have X credits!
+    <% else %>
+      <p>
+        <%= link_to 'Home', root_path %>
+        |
+        <%= link_to 'New User', new_users_path %>
+        |
+        <%= link_to 'Login', new_sessions_path %>
+      </p>
+
+    <% end %>
+
     <%= yield %>
   </body>
 </html>
