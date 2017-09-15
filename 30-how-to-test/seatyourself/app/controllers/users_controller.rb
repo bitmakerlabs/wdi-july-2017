@@ -12,7 +12,12 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(user_params)
+    @user = User.new
+    @user.name = [:user][:name]
+    @user.email = [:user][:email]
+    @user.password = [:user][:password]
+    @user.password_confirmation = [:user][:password_confirmation]
+
     if @user.save
       self.current_user = @user
       redirect_to root_path, :notice => "Welcome #{@user.name}!"
@@ -21,8 +26,4 @@ class UsersController < ApplicationController
     end
   end
 
-  private
-  def user_params
-    params.require(:user).permit(:name, :email, :password, :password_confirmation)
-  end
 end
