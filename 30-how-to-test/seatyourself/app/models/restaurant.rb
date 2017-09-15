@@ -5,4 +5,8 @@ class Restaurant < ActiveRecord::Base
   belongs_to :category
   has_many :reservations
 
+  def available?(datetime)
+    return datetime > Time.now
+  end
+
 end
