@@ -1,3 +1,11 @@
+
+a = [1, 2, 3, 6, 8, 9]
+a.each do |item|
+  puts item
+end
+
+
+
 # Numbers
 a_number = 10
 a_floating_point_number = 3.1415
